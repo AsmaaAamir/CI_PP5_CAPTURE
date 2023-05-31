@@ -1,9 +1,15 @@
-/*.NavLink{
+.NavBar{
     background-color: black;
+    position: fixed;
 }
+
 .Icon{
     color: white;
-} */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+}
 
 .Icon:hover{
     cursor: pointer;
@@ -12,4 +18,5 @@
     color: white;
     font-size:18px;
     font-weight: bolder;
+    text-decoration: none;
 }
