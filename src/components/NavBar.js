@@ -2,7 +2,9 @@ import React from "react";
 import { Nav, Container } from "react-bootstrap";
 import logo from "../assets/new_logo.png";
 import styles from "../styles/NavBar.module.css";
+import { NavLink } from "react-router-dom";
 
+ 
 const NavBar = () => {
     return (
         <Container className={styles.NavLink}>
@@ -10,31 +12,31 @@ const NavBar = () => {
                 <img src={logo} alt="capture logo" height="50"/>
                 <h1>Capture</h1>
             </div>
-            <div >
-                <Nav.Link className={styles.Icon}>
+            <div>
+                <NavLink to="/" className={styles.Icon}>
                     <i class="fas fa-home"></i>
                     Home
-                </Nav.Link>
-                <Nav.Link className={styles.Icon}>
-                    <i class="fas fa-rss"></i>
-                    Explore
-                </Nav.Link>
-                <Nav.Link className={styles.Icon}>
+                </NavLink>
+                <NavLink to="/addpost" className={styles.Icon}>
                     <i class="fas fa-plus-circle"></i>
                     Add post
-                    </Nav.Link>
-                <Nav.Link className={styles.Icon}>
+                </NavLink>
+                <NavLink to="/profile" className={styles.Icon}>
                     <i class="fas fa-user-circle"></i>
                     Profile
-                </Nav.Link>
-                <Nav.Link className={styles.Icon}>
+                </NavLink>
+                <NavLink  to="/signin"className={styles.Icon}>
                     <i class="fas fa-sign-in-alt"></i>
                     Sign In
-                </Nav.Link>
-                <Nav.Link className={styles.Icon}>
+                </NavLink>
+                <NavLink to="/signup" className={styles.Icon}>
                     <i class="fas fa-user-plus"></i>
                     Sign Up
-                </Nav.Link>
+                </NavLink>
+                <NavLink to="/logout" className={styles.Icon}>
+                 <i class="fad fa-sign-out-alt"></i>
+                    Logout
+                </NavLink>
             </div>
         </Container>
     );

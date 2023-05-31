@@ -1,8 +1,15 @@
-html{
+/*html{
     background-color: black;
     color:white;
-}
+}*/
 h1{
     color:white;
     font-family:'Tsukimi Rounded', sans-serif;
+}
+.App{
+    min-height:100vh;
+}
+.Main{
+    padding-top: 15px;
+    color:black;
 }
