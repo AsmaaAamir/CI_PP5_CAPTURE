@@ -1,41 +1,23 @@
-.WelcomeCard{
-    height: 90vh;
-    width: 100vh;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-.Card{
+body{
     margin: 0;
-    height: 50vh;
-    background-color: black;
-    display: flex;
+    padding: 0;
+    
+}
+.Container{
+    height: 100vh;
+    width: 100%;
+    background-image: url('../assets/landing-page-bg.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.Logo{
+    opacity: 10%;
+    margin-left: 50px;
+    padding:20px;
+    border-radius: 50%;
+}
+.Text h1{
+    margin-top: 45%;
     align-items: center;
-    justify-content: center;
-}
-.Heading{
-    color: white;
-}
-.Heading h1 {
-    font-size: 6rem;
-}
-.Heading h1:hover{
-    color:rgb(229, 75, 75);
-}
-.Text{
-    color: white;
-}
-
-.WelcomeButton{
-    align-items: center;
-    background: none;
-    border-radius: 10px;
-    color: white;
-}
-
-.WelcomeButton:hover{
-    cursor: pointer;
-    background-color: rgb(229, 75, 75);
 }

@@ -8,7 +8,36 @@ import styles from '../styles/WelcomePage.module.css';
 
 const Welcomepage = () => {
     return (
-        <Container className={styles.WelcomeCard}>
+        <div className={styles.Container}>
+            <div className="row">
+                <div className={styles.Logo}>
+                    <img src={logo} alt="capture logo" height="100"/>
+                </div>
+                <div className="col-md-8 offset=md-2 Text">
+                    <h1 className="text-center">Capture</h1>
+                    <p className="text-center">
+                        Welcome!
+                        <br/>
+                        Capture the moments and share it with your loved one and the world. Become the next inspiration for someone..!
+                        <br/>
+                    </p>
+                    <NavLink  to="/signin" >
+                        <button className={styles.WelcomeButton} >Sign In </button>
+                    </NavLink>
+                    <p> or </p>
+                    <NavLink to="/signup" >
+                        <button className={styles.WelcomeButton}>Sign Up </button>
+                    </NavLink>
+                </div>
+            </div>
+        </div>
+      
+    );
+};
+
+
+export default Welcomepage;
+  <Container className={styles.WelcomeCard}>
             <div className={styles.Card}>
                 <div className={styles.Heading}>
                     <img src={logo} alt="capture logo" height="200"/>
@@ -29,30 +58,3 @@ const Welcomepage = () => {
                 </div>
             </div>
         </Container>
-    );
-};
-
-
-export default Welcomepage;
-
-<Card  className={styles.WelcomeCard}>
-<Card.ImgOverlay  >
-    <Card.Title className={styles.Heading}>
-        <img src={logo} alt="capture logo" height="200"/>
-        <h1>Capture</h1>
-    </Card.Title>
-    <Card.Text className={styles.Text}>
-        Welcome!
-        <br/>
-        Capture the moments and share it with your loved one and the world. Become the next inspiration for someone..!
-        <br/>
-        <NavLink  to="/signin" >
-            <button className={styles.WelcomeButton} >Sign In </button>
-        </NavLink>
-        <p> or </p>
-        <NavLink to="/signup" >
-            <button className={styles.WelcomeButton}>Sign Up </button>
-        </NavLink>
-    </Card.Text>
-</Card.ImgOverlay>
-</Card>
