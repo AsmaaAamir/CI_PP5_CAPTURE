@@ -1,14 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from '../assets/logo.jpg'
+import { Card, button } from "react-bootstrap";
 
 /* Welcome page wih option ot sign in and sign up */
 
-const Welcome = () => {
+const Welcomepage = () => {
     return (
         <Card className="bg-dark text-white">
             <Card.ImgOverlay>
                 <Card.Title>
+                    <img src={logo} alt="capture logo" />
                     <h1>Capture</h1>
                 </Card.Title>
                 <Card.Text>
@@ -16,9 +18,14 @@ const Welcome = () => {
                     <br/>
                     Capture the moments and share it with your loved one and the world. Become the next inspiration for someone..!
                     <br/>
-                    <button>Sign In </button>
+                    <NavLink  to="/signin">
+                        <button>Sign In </button>
+                    </NavLink>
                     <p> or </p>
-                    <button>Sign Up </button>
+                    <NavLink to="/signup">
+                        <button>Sign Up </button>
+                    </NavLink>
+                
                 </Card.Text>
             </Card.ImgOverlay>
         </Card>
@@ -26,4 +33,4 @@ const Welcome = () => {
 };
 
 
-export default Welcome;
+export default Welcomepage;

@@ -4,6 +4,8 @@ import NavBar from "./components/NavBar";
 import Container from 'react-bootstrap/Container';
 import { Route, Switch } from "react-router-dom"; 
 import Home from '../src/pages/Home';
+import Welcomepage from "./components/Welcomepage";
+
  
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
     <div className={styles.App}>
         <Home />
             <Switch>
+                <Route exact path="/" render={ () => <Welcomepage/>  }/>
                 <Route exact path="/home" render={ () => <Home/> }/>
                 <Route exact path="/profile" render={ () => <h1>Profile</h1> } />
                 <Route exact path="/addpost" render={ () => <h1>Add Post</h1> }/>

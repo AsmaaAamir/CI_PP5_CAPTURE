@@ -9,6 +9,8 @@
     flex-direction: column;
     justify-content: space-between;
     z-index: 1;
+    width: 30%;
+    text-align: center;
 }
 
 .Icon:hover{
@@ -19,4 +21,7 @@
     font-size:18px;
     font-weight: bolder;
     text-decoration: none;
+}
+.Icon span {
+    padding-left: 10px;
 }
