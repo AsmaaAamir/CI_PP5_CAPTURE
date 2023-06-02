@@ -34,10 +34,11 @@ const SignUpForm = () => {
     };
 
     return (
+        <Container className={styles.Form}>
         <Row className={styles.Row}>
-            <Col className="my-auto py-2 p-md-2" md={6}>
+            <Col className="my-auto py-2 p-md-2" md={9}>
                 <Container className={'${appStyles.Content} p-4'}>
-                    <h1>Sign Up</h1>
+                    <h1 className={styles.Header}>Sign Up</h1>
                     <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="username">
                         <Form.Label className="d-none">Username:</Form.Label>
@@ -100,11 +101,12 @@ const SignUpForm = () => {
                 </Container>
                 <Container className={'mt-3 ${appStyles.Content}'}>
                         <Link clasName={styles.Link} to="/signin">
-                            Already have an account <span>Sign In</span>
+                           <p> Already have an account <span>Sign In</span></p>
                       </Link>
                 </Container>
             </Col>
         </Row>
+        </Container>
     );
 };
 

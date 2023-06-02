@@ -37,24 +37,3 @@ const Welcomepage = () => {
 
 
 export default Welcomepage;
-  <Container className={styles.WelcomeCard}>
-            <div className={styles.Card}>
-                <div className={styles.Heading}>
-                    <img src={logo} alt="capture logo" height="200"/>
-                    <h1>Capture</h1>
-                </div>
-                <div className={styles.Text}>
-                    Welcome!
-                    <br/>
-                    Capture the moments and share it with your loved one and the world. Become the next inspiration for someone..!
-                    <br/>
-                    <NavLink  to="/signin" >
-                        <button className={styles.WelcomeButton} >Sign In </button>
-                    </NavLink>
-                    <p> or </p>
-                    <NavLink to="/signup" >
-                        <button className={styles.WelcomeButton}>Sign Up </button>
-                    </NavLink>   
-                </div>
-            </div>
-        </Container>

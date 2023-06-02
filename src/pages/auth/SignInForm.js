@@ -3,8 +3,12 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import styles from "../../styles/SignInUp.module.css";
 import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
+    const setCurrentUser = useSetCurrentUser();
+
+
     const [signInData, setSignInData ] = useState ({
         username: "",
         password: "",
@@ -35,10 +39,11 @@ function SignInForm() {
     };
 
     return (
+        <Container className={styles.Form}>
         <Row className={styles.Row}>
             <Col className="my-auto py-2 p-md-2" md={6}>
                 <Container className={'${appStyles.Content} p-4'}>
-                    <h1>Sign In</h1>
+                    <h1 className={styles.Header}>Sign In</h1>
                     <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="username">
                         <Form.Label className="d-none">Username:</Form.Label>
@@ -85,11 +90,12 @@ function SignInForm() {
                 </Container>
                 <Container className={'mt-3 ${appStyles.Content}'}>
                         <Link clasName={styles.Link} to="/signup">
-                            Don't have an account <span>Sign In</span>
+                            <p>Don't have an account <span>Sign In</span></p>
                       </Link>
                 </Container>
             </Col>
         </Row>
+        </Container>
     );
 };
 

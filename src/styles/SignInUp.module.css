@@ -1,13 +1,46 @@
 .none{
-    color:white;
     font-size:1rem;
+}
+.Form{
+
+    display: flex;
+    flex-direction: row;
+    padding: 30xp 30px;
+}
+.Row{
+    flex:0.8;
 }
 html{
     color:black;
 }
-h1{
-    color:black;
-}
+
 span{
     font-family:'Tsukimi Rounded', sans-serif;
+    color: red;
+}
+
+.Link{
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    display: block;
+    margin: auto;
+
+}
+.Link:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Header{
+    text-align: center;   
+    padding: 20px;
+}
+.Button{
+    width: 100%;
+}
+.Button:hover{
+    opacity: 0.8;
+    border-color: transparent;
+    cursor: pointer;
 }

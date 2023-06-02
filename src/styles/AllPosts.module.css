@@ -1,4 +1,4 @@
-.HomePage{
+.AllPosts{
     display: flex;
     flex-direction: row;
 }
@@ -6,10 +6,8 @@
 .Navbarside{
     position: relative;
     flex:0.2;
-
 }
 
 .Content{
-    
     flex:0.8;
 }
