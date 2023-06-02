@@ -20,8 +20,8 @@ function App() {
                 <Route exact path="/home" render={ () => <Home/> }/>
                 <Route exact path="/profile" render={ () => <h1>Profile</h1> }/>
                 <Route exact path="/addpost" render={ () => <h1>Add Post</h1> }/>
-                <Route exact path="/signin" render={ () => <SignInForm/> }/>
-                <Route exact path="/signup" render={ () => <SignUpForm/> }/>
+                <Route exact path="/signin" render={ () => <SignInForm /> }/>
+                <Route exact path="/signup" render={ () => <SignUpForm /> }/>
                 <Route exact path="/logout" render={ () => <h1>Log Out</h1> }/>
             </Switch>
     </div>

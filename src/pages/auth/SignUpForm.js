@@ -59,12 +59,12 @@ const SignUpForm = () => {
                     <Form.Group controlId="password">
                         <Form.Label className="d-none">Password</Form.Label>
                         <Form.Control 
-                        className={styles.Input}
-                        type="password" 
-                        placeholder="Password"
-                        name="password"
-                        value={password}
-                        onChange={handleChange} 
+                            className={styles.Input}
+                            type="password" 
+                            placeholder="Password"
+                            name="password"
+                            value={password}
+                            onChange={handleChange} 
                         />
                     </Form.Group>
                     {errors.password?.map((message, idx) => (
@@ -75,12 +75,12 @@ const SignUpForm = () => {
                     <Form.Group controlId="password2">
                         <Form.Label className="d-none"> Confrim Password</Form.Label>
                         <Form.Control 
-                        className={styles.Input}
-                        type="password2" 
-                        placeholder="Confrim Password"
-                        name="password2"
-                        value={password2}
-                        onChange={handleChange} 
+                            className={styles.Input}
+                            type="password" 
+                            placeholder="Confrim Password"
+                            name="password2"
+                            value={password2}
+                            onChange={handleChange} 
                         />
                     </Form.Group>
                     {errors.password1?.map((message, idx) => (
@@ -88,7 +88,7 @@ const SignUpForm = () => {
                                 {message}
                             </Alert>
                         ))}
-                    <Button variant="primary" type="submit">
+                    <Button className={styles.Button} variant="primary" type="submit">
                         Sign Up
                     </Button>
                     {errors.non_field_errors?.map((message, idx) =>( 

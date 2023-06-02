@@ -73,7 +73,7 @@ function SignInForm() {
                                 {message}
                             </Alert>
                         ))}
-                    <Button variant="primary" type="submit">
+                    <Button className={styles.Button}  variant="primary" type="submit">
                         Sign In
                     </Button>
                     {errors.non_field_errors?.map((message, idx) =>( 
@@ -85,7 +85,7 @@ function SignInForm() {
                 </Container>
                 <Container className={'mt-3 ${appStyles.Content}'}>
                         <Link clasName={styles.Link} to="/signup">
-                            Don't have an account <span>Sign setSignUpData</span>
+                            Don't have an account <span>Sign In</span>
                       </Link>
                 </Container>
             </Col>
