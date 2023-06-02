@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Form, Button, Row, Col, Container, Image} from "react-bootstrap";
+import React, { useRef, useState} from "react";
+import {Form, Button, Row, Col, Container, Image, Alert} from "react-bootstrap";
 import Upload from "../../assets/upload.png";
 import styles from "../../styles/AddPost.module.css";
 import Asset from "../../components/Asset";
@@ -97,14 +97,63 @@ function AddPostForm(){
                 <option value="Bolivia">Bolivia</option> <option value="Rwanda">Rwanda</option> 
                 </Form.Control>
             </Form.Group>
-            {errors.description?.map((message, idx) => (
+            {errors.category?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                     {message}
                 </Alert>
             ))}
-
-
+            <Button className={'${btnstyles.button} ${btnStyles.Grey}'}
+            onClick={() => {}} >
+                Create
+            </Button>
+            <Button className={'${btnstyles.button} ${btnStyles.Grey}'}
+            onClick={() => {}} >
+                Cancel
+            </Button>
         </div>
-    )
+    );
+    return (
+        <Form>
+            <Row>
+                <Col className="py-2 p-2 p-md2" md={7} lg={8}>
+                    <Container className={'${app.styles/Content} ${styles.Container} d-flexflex-column justify-content-center'}>
+                        <Form.Group className="text-center">
+                            {image ? (
+                                <>
+                                <figure>
+                                    <Image classNAME={app.Styles.Iamge} src={image} rounded />
+                                </figure>
+                                <div>
+                                    <Form.Label className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                        htmlFor="image-upload">
+                                        Change the image
+                                    </Form.Label>
+                                </div>
+                                </>
+                            ) : (
+                            <Form.Label className="d-flex justify-content-center"
+                                    htmlFor="image-upload">
+                                <Asset
+                                    src={Upload}
+                                    message="Click or tap to upload an image"/>
+                            </Form.Label>
+                            )}
+
+                            <Form.File
+                                id="image-upload"
+                                accept="image/*"
+                                onChange={handleChangeImage}/>
+                        </Form.Group>
+                        <div className="d-md-none">{textFields}</div>
+                    </Container>
+                </Col>
+                <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+                <Container className={appStyles.Content}>{textFields}</Container>
+                </Col>
+            </Row>
+        </Form>
+    );
 
 }
+
+export default AddPostForm;
