@@ -1,6 +1,6 @@
 # Capture <img src="src/assets/new_logo.png">
 
-**Developer: Asma Aamir 
+**Developer: Asma Aamir**
 
 [Visit live website](link)
 
@@ -10,13 +10,13 @@
 - [Project Goals](#project-goals)
 - [UserStories](#user-stories)
 - [Design](#design)
-    - [Colurs](#colours)
+    - [Colours](#colours)
     - [Font](#font)
     - [Wireframe](#wireframes)
 - [Features](#features)    
 - [Technologies](#tecnolgoes)
     - [Languages](#languages)
-    - [Libraries, frameworks and dependencies](#libraries-framework-dependencies)
+    - [Libraries, frameworks and dependencie](#libraries-framework-dependencies)
     - [Tools & Programs](#tools-programs)
 - [Front-End](#front-end)
 - [Back-End](#back-end)
@@ -29,8 +29,8 @@
 
 
 ## About 
-Capture is a platform where user's can share photos of their adventures, inspiring other people to travel or add the location to their vacation list.
-To keep up with other users' posts, the app lets users like, comment on, and follow them. To upload posts, like, comments, and follow other users, users must be signed in. 
+Capture is a platform where user's can share photo's of their adventures, inspiring other people to travel or add the location to their vacation list.
+To keep up with other users posts, the app lets users like, comment on, and follow them. To upload posts, like, comments, and follow other users, user must be signed in. 
 
 ## Project Goals 
-The goals for the project was to build a platform that would enable users to interact with one another in a number of ways, such as by leaving comments on other users' postings or by following other users to keep up with their posts . While ensuring that the website is easy to navigate. 
+The goals for the project was to build a platform that would enable users to interact with one another in a number of ways, such as by leaving comments on other user's posts or by following other users to keep up with their posts . While ensuring that the website is easy to navigate. 

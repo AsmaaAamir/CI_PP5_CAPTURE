@@ -31,11 +31,11 @@ const NavBar = () => {
     const loggedInIcons = <> {currentUser?.username} </>;
     const loggedOutIcons =(
         <>
-           <NavLink  to="/signin"className={styles.Icon}>
+           <NavLink  to="/"className={styles.Icon}>
                 <i class="fas fa-sign-in-alt"></i>
                 <span>Sign In </span>
             </NavLink>
-            <NavLink to="/signup" className={styles.Icon}>
+            <NavLink to="/signin" className={styles.Icon}>
                 <i class="fas fa-user-plus"></i>
                 <span>Sign Up </span>
             </NavLink>
