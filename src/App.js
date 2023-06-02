@@ -7,7 +7,7 @@ import Home from '../src/pages/Home';
 import Welcomepage from "./components/Welcomepage";
 import "./api/axiosDefaults";
 import SignInForm from '../src/pages/auth/SignInForm';
-import SignInForm from '../src/pages/auth/SignUpForm';
+import SignUpForm from '../src/pages/auth/SignUpForm';
 
 
  
