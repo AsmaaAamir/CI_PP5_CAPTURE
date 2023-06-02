@@ -8,6 +8,7 @@ import Welcomepage from "./components/Welcomepage";
 import "./api/axiosDefaults";
 import SignInForm from '../src/pages/auth/SignInForm';
 import SignUpForm from '../src/pages/auth/SignUpForm';
+import AddPostForm from '../src/pages/Posts/AddPostForm';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
                 <Route exact path="/" render={ () => <Welcomepage/> }/>
                 <Route exact path="/home" render={ () => <AllPosts/> }/>
                 <Route exact path="/profile" render={ () => <h1>Profile</h1> }/>
-                <Route exact path="/addpost" render={ () => <h1>Add Post</h1> }/>
+                <Route exact path="/addpost" render={ () => <AddPostForm/> }/>
                 <Route exact path="/signin" render={ () => <SignInForm /> }/>
                 <Route exact path="/signup" render={ () => <SignUpForm /> }/>
                 <Route exact path="/logout" render={ () => <h1>Log Out</h1> }/>

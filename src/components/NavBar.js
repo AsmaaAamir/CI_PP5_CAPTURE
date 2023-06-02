@@ -3,12 +3,31 @@ import { Container } from "react-bootstrap";
 import logo from "../assets/new_logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
+import Avata from "./Avatar";
+import axios from "axios";
 
  
 const NavBar = () => {
-
     const currentUser = useCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
+
+    const handleLogOut = async () => {
+        try {
+            await axios.post("dj-rest-auth-logout/");
+            setCurrentUser(null);
+        } catch (err){
+            console.log(err);
+        }
+    };
+
+    const AddPostIcon = (
+        <NavLink to="/addpost" className={styles.Icon}>
+                <i class="fas fa-plus-circle"></i>
+                <span>Add post </span>
+        </NavLink>
+    );
+    
     const loggedInIcons = <> {currentUser?.username} </>;
     const loggedOutIcons =(
         <>
@@ -30,17 +49,14 @@ const NavBar = () => {
         <div className={styles.NavIcon}>
             <NavLink to="/" className={styles.Icon}>
                 <i class="fas fa-home"></i> 
-                <span>Home  </span>
+                <span>Home</span>
             </NavLink>
-            <NavLink to="/addpost" className={styles.Icon}>
-                <i class="fas fa-plus-circle"></i>
-                <span>Add post </span>
-            </NavLink>
-            <NavLink to="/profile" className={styles.Icon}>
-                <i class="fas fa-user-circle"></i>
+            {currentUser && AddPostIcon}
+            <NavLink to={'/profiles/${currentUser?.profile_id}'} className={styles.Icon}>
+                <img src={currentUser?.profile_image}/>
                 <span>Profile  </span>
             </NavLink>
-            <NavLink to="/logout" className={styles.Icon}>
+            <NavLink to="/" className={styles.Icon}>
                 <i class="fas fa-sign-out-alt"></i>
                 <span> Logout</span>
             </NavLink>
