@@ -1,4 +1,4 @@
-.NavBar{
+/*.NavBar{
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,7 @@
 .NavLogo{
     margin: 15px;
 }
-
+*/
 .NavIcon{
     display: flex;
     flex-direction: column;

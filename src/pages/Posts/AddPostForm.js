@@ -4,6 +4,7 @@ import Upload from "../../assets/upload.png";
 import styles from "../../styles/AddPost.module.css";
 import Asset from "../../components/Asset";
 import { useHistory } from "react-router-dom";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function AddPostForm(){
     const [errors, setErrors] = useState({});
@@ -36,6 +37,27 @@ function AddPostForm(){
                 image: URL.createObjectURL(e.target.files[0]),
             });
         }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData();
+
+        formData.append("title", title);
+        formData.append("description", description);
+        formData.append("category", category);
+        formData.append("image", imageInput.current.files[0]);
+        
+        try {
+            const { data } = await axiosReq.post("/posts/", formData);
+            history.push('/posts/${data.id}');
+        }catch (err) {
+            console.lof(err);
+            if (err.responce?.status !== 401){
+                setErrors(err.responce?.data);
+            }
+        }
+
     };
 
     const textFields =(
@@ -121,10 +143,10 @@ function AddPostForm(){
                             {image ? (
                                 <>
                                 <figure>
-                                    <Image classNAME={app.Styles.Iamge} src={image} rounded />
+                                    <Image className={styles.Image} src={image} rounded />
                                 </figure>
                                 <div>
-                                    <Form.Label className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                    <Form.Label className={`${styles.Button} ${styles.Grey} btn`}
                                         htmlFor="image-upload">
                                         Change the image
                                     </Form.Label>
@@ -142,13 +164,19 @@ function AddPostForm(){
                             <Form.File
                                 id="image-upload"
                                 accept="image/*"
-                                onChange={handleChangeImage}/>
+                                onChange={handleChangeImage}
+                                ref={imageInput}/>
                         </Form.Group>
+                        {errors?.image?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
                         <div className="d-md-none">{textFields}</div>
                     </Container>
                 </Col>
                 <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-                <Container className={appStyles.Content}>{textFields}</Container>
+                <Container className={styles.Content}>{textFields}</Container>
                 </Col>
             </Row>
         </Form>
