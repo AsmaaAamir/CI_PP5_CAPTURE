@@ -14,10 +14,16 @@ import AddPostForm from '../src/pages/Posts/AddPostForm';
 function App() {
   return (
     <div className={styles.App}>
+        <Container className={styles.Body}>
+            <div> 
+                <Switch>
+                    <Route exact path="/" render={ () => <Welcomepage/> }/> 
+                </Switch>
+            </div>
+        </Container> 
         <NavBar/>
         <Container className={styles.Main}>
             <Switch>
-                <Route exact path="/" render={ () => <Welcomepage/> }/>
                 <Route exact path="/home" render={ () => <AllPosts/> }/>
                 <Route exact path="/profile" render={ () => <h1>Profile</h1> }/>
                 <Route exact path="/posts/addpost" render={ () => <AddPostForm/> }/>
@@ -25,8 +31,9 @@ function App() {
                 <Route exact path="/signup" render={ () => <SignUpForm /> }/>
                 <Route exact path="/logout" render={ () => <h1>Log Out</h1> }/>
             </Switch>
-        </Container>    
+        </Container> 
     </div>
+    
   );
 }
 

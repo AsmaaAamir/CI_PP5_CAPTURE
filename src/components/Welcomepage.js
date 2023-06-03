@@ -14,20 +14,22 @@ const Welcomepage = () => {
                     <img src={logo} alt="capture logo" height="100"/>
                 </div>
                 <div className="col-md-8 offset=md-2 Text">
-                    <h1 className="text-center">Capture</h1>
+                    <h1 className={styles.Text}>Capture</h1>
                     <p className="text-center">
-                        Welcome!
+                        <hr/>
+                        <h3>Welcome!</h3>
                         <br/>
                         Capture the moments and share it with your loved one and the world. Become the next inspiration for someone..!
                         <br/>
                     </p>
-                    <NavLink  to="/signin" >
-                        <button className={styles.WelcomeButton} >Sign In </button>
-                    </NavLink>
-                    <p> or </p>
-                    <NavLink to="/signup" >
-                        <button className={styles.WelcomeButton}>Sign Up </button>
-                    </NavLink>
+                    <div className={styles.WelcomeButton}>
+                        <NavLink  to="/signin" >
+                            <button className={styles.WelcomeButton1}>Sign In </button>
+                        </NavLink>
+                        <NavLink  to="/signup" >
+                            <button className={styles.WelcomeButton2}>Sign Up </button>
+                        </NavLink>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,23 +1,67 @@
 body{
     margin: 0;
     padding: 0;
-    
 }
 .Container{
-    height: 100vh;
-    width: 100%;
-    background-image: url('../assets/landing-page-bg.jpg');
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
+    margin: auto;
+    width: 70%;
+    height: 100%;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color:white;
+    text-align: center;
+
 }
 .Logo{
-    opacity: 10%;
-    margin-left: 50px;
-    padding:20px;
-    border-radius: 50%;
+    padding-left: 25px;
+    padding-top: 25px;
 }
-.Text h1{
-    margin-top: 45%;
+.Text{
+    font-size: 500%;
+    font-weight: bolder;
     align-items: center;
+}
+.Text:hover{
+    text-shadow: 5px 5px #FF0000;
+}
+.WelcomeButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+   
+}
+.WelcomeButton1{
+  margin-right: 30px; 
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-size: 1.3rem;
+  
+}
+.WelcomeButton2{
+    margin-left: 30px; 
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: 1.3rem;
+}
+
+.WelcomeButton1:hover{
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    transform: scale(1.3);
+
+}
+.WelcomeButton2:hover{
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    transform: scale(1.2);
 }
