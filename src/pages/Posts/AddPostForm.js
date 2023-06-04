@@ -52,9 +52,9 @@ function AddPostForm(){
             const { data } = await axiosReq.post("/posts/", formData);
             history.push('/posts/${data.id}');
         }catch (err) {
-            console.lof(err);
-            if (err.responce?.status !== 401){
-                setErrors(err.responce?.data);
+            console.log(err);
+            if (err.response?.status !== 401){
+                setErrors(err.response?.data);
             }
         }
 
@@ -135,7 +135,7 @@ function AddPostForm(){
         </div>
     );
     return (
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Row>
                 <Col className="py-2 p-2 p-md2" md={7} lg={8}>
                     <Container className={'${app.styles/Content} ${styles.Container} d-flexflex-column justify-content-center'}>
