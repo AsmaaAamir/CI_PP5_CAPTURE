@@ -2,7 +2,7 @@ import React, { useEffect, useState} from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
-import AllPosts from "./AllPosts";
+import Post from "./Post";
 
 function PostPage() {
     const { id } = useParams();

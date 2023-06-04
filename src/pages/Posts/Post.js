@@ -5,7 +5,7 @@ import Avatar from '../../components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from '../../styles/AllPosts.module.css';
 
-const AllPosts = (props) => {
+const Post = (props) => {
 
     const {
         id, owner, profile_id, profile_image, comment_count,
@@ -104,4 +104,4 @@ const AllPosts = (props) => {
     );
 };
 
-export default AllPosts;
+export default Post;

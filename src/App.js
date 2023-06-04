@@ -3,7 +3,7 @@ import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from 'react-bootstrap/Container';
 import { Route, Switch } from "react-router-dom"; 
-import AllPosts from '../src/pages/Posts/AllPosts';
+import AllPosts from './pages/Posts/Post';
 import Welcomepage from "./components/Welcomepage";
 import "./api/axiosDefaults";
 import SignInForm from '../src/pages/auth/SignInForm';
