@@ -1,15 +1,16 @@
 import React from 'react';
-import { Card, Container, Overlay, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Card, Container, Overlay, OverlayTrigger, Tooltip, Media } from 'react-bootstrap';
 import { axiosRes } from '../../api/axiosDefaults';
 import Avatar from '../../components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from '../../styles/AllPosts.module.css';
+import { Link, useHistory } from "react-router-dom";
 
 const Post = (props) => {
 
     const {
-        id, owner, profile_id, profile_image, comment_count,
-        like_count, like_id, title, descrition, category, image, update_at, 
+        id, owner, profile_id, profile_image, comments_count,
+        likes_count, like_id, title, descrition, category, image, update_at, 
         postPage, setPosts, } = props;
 
         const currentUser = useCurrentUser();
@@ -32,7 +33,7 @@ const Post = (props) => {
                 console.log(err)
             }
         };
-        const handelUnlike = async () =>{
+        const handleUnlike = async () =>{
             try{ 
                 await axiosRes.delete('/likes/${like_id}/');
                 setPosts((prevPosts) => ({
@@ -84,7 +85,7 @@ const Post = (props) => {
                                 <i className={'fas fa-heart %{styles.Heart}'}/>
                             </span>
                         ) : currentUser ? (
-                            <span onClick={handlelike}>
+                            <span onClick={handleLike}>
                                 <i className={'fas fa-heart %{styles.HeartOutline}'}/>
                             </span>
                         ) : (

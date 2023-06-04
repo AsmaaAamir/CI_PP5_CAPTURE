@@ -1,4 +1,4 @@
-import { useEffect, useRef, UseState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const useClickOutsideToggle = () => {
     const [expanded, setExpanded] = useState(false);
