@@ -1,27 +1,34 @@
-import logo from "../src/assets/logo.jpg";
+import logo from "../src/assets/new_logo.png";
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from 'react-bootstrap/Container';
 import { Route, Switch } from "react-router-dom"; 
-import AllPosts from './pages/Posts/Post';
-import Welcomepage from "./components/Welcomepage";
 import "./api/axiosDefaults";
-import SignInForm from '../src/pages/auth/SignInForm';
-import SignUpForm from '../src/pages/auth/SignUpForm';
-import AddPostForm from '../src/pages/Posts/AddPostForm';
+import { useCurrentUser } from "./contexts/CurrentUserContext";
+
+import Welcomepage from "./components/Welcomepage";
+import SignInForm from '../../pages/auth/SignInForm';
+import SignUpForm from '../../pages/auth/SignUpForm';
+import AllPosts from './pages/Posts/Post';
+import AddPostForm from '../../pages/Posts/AddPostForm';
 import PostPage from "./pages/Posts/PostPage";
 import EditPostForm from "./pages/Posts/EditPostForm";
 
 
 function App() {
-  return (
+    const currentUser = useCurrentUser();
+    const profile_id = currentUser?.profile_id || "";
+    
+    return (
     <div className={styles.App}>
-        <Container className={styles.Body}>
-            <div> 
+        <NavBar/>
+        <Container className={styles.Body}> 
                 <Switch>
                     <Route exact path="/" render={ () => <Welcomepage/> }/> 
+                    <Route exact path="/signin" render={ () => <SignInForm /> }/>
+                    <Route exact path="/signup" render={ () => <SignUpForm /> }/>
                 </Switch>
-            </div>
+
         </Container> 
         <NavBar/>
         <Container className={styles.Main}>
