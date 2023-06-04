@@ -13,3 +13,23 @@ export const fetchMoreData = async (resource, setResource) => {
         }));
     } catch (err) {}
 };
+
+export const followHelper = (profile, clickedProfile, follwing_id) => {
+    return profile.id === clickedProfile.id ? {
+        ...profile, follower_count: profile.followers_counts + 1,
+        following_id,
+    } 
+    :profile.is_owner ? {
+        ...profile, following_count: profile.following_count + 1
+    } : profile;
+};
+
+export const unfollowHelper = (profile, clickedProfile) => {
+    return profile.id === clickedProfile.id ? {
+        ...profile. folloers_count: pofile.followers_count - 1,
+        following_id: null
+    }
+    : profile.is_owner ? { 
+        ...profile, following_count: profile.following_count - 1 
+    } : profile;
+};
