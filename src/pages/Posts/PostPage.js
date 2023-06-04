@@ -27,7 +27,7 @@ function PostPage() {
         <Col className="py-2 p-0 p-lg" lg={8}>
             <p> Popular profile for mobile</p>
             <Post {...post.result[0]} setPosts={setPost} postPage/>
-            <Container className={styles.Content}>Comments</Container>
+            <Container className={""}>Comments</Container>
         </Col> 
     </Row>
     );
