@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import [ Col, Row, Container, Button, Image ] from "react-bootstrap";
+import { Col, Row, Container, Button, Image, } from "react-bootstrap";
 import { useParams } from "react-router";
 import { InfiniteScroll } from "react-InfiniteScroll-components"
 
@@ -21,7 +21,7 @@ function ProfilePage() {
     const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
     const { pageProfile } = useProfileData();
     const [profile] = pageProfile.results;
-    const is_owner - currentUser?.username === profile?.owner;
+    const is_owner = currentUser?.username === profile?.owner;
     
     /* submits a request to an API to retrieve user
      profiles and posts update profiles page data */
@@ -109,7 +109,8 @@ function ProfilePage() {
                 ) : (
                     <Asset src={NoResult}
                     message={'No result were found, ${profile?.owner} hasnt posted yet.'} />
-                )}
+                )
+            }
         </>
     );
     return (

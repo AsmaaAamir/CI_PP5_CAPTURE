@@ -28,7 +28,7 @@ export const MoreDropdown = ({ handleEdit, handleDelet }) => {
 };
 
 export const ProfileEditDropdown = ({ id }) => {
-    const history = useHistory():
+    const history = useHistory();
     return (
         <Dropdown className={'ml-auto- px-3 ${stlyes.Absolute}'} drop="left">
             <Dropdown.Toggle as={MoreOptions} />
