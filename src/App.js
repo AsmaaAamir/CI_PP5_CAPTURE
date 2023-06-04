@@ -24,14 +24,14 @@ function App() {
         <NavBar/>
         <Container className={styles.Main}>
             <Switch>
-                <Route exact path="/home" render={ () => <AllPosts/> }/>
+                <Route exact path="/feed" render={ () => <AllPosts/> }/>
                 <Route exact path="/profile" render={ () => <h1>Profile</h1> }/>
                 <Route exact path="/posts/addpost" render={ () => <AddPostForm/> }/>
                 <Route exact path="/signin" render={ () => <SignInForm /> }/>
                 <Route exact path="/signup" render={ () => <SignUpForm /> }/>
                 <Route exact path="/logout" render={ () => <h1>Log Out</h1> }/>
             </Switch>
-        </Container> 
+        </Container>
     </div>
     
   );
