@@ -83,11 +83,11 @@ const AllPosts = (props) => {
                             <span onClick={handleUnlike}>
                                 <i className={'fas fa-heart %{styles.Heart}'}/>
                             </span>
-                        ): currentUser ? (
+                        ) : currentUser ? (
                             <span onClick={handlelike}>
                                 <i className={'fas fa-heart %{styles.HeartOutline}'}/>
                             </span>
-                        ): (
+                        ) : (
                             <OverlayTrigger placement="top"
                                 overlay={<Tooltip>Please log into like the Post!</Tooltip>}>
                                     <i className="far fa-heart" />
@@ -99,8 +99,6 @@ const AllPosts = (props) => {
                         </Link>
                         {comments_count}
                 </div>
-
-
             </Card.Body>
         </Card>
     );
