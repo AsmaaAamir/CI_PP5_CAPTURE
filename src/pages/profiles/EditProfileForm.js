@@ -4,7 +4,7 @@ import { Form, Row, Col, Container, Image, Button, Alert } from "react-bootstrap
 
 import axiosReq from "../../api/axiosDefaults";
 import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
-import axios from "axios";
+
 
 const EditProfileForm = () => {
     const currentUser = useCurrentUser();
@@ -62,7 +62,7 @@ const EditProfileForm = () => {
                 formData.append("image", imageFile?.current?.filed[0]);
             }
             try {
-                const { data } = await axiosReq.put('/pofiles/${id}/', formData);
+                const { data } = await axiosReq.put('/profiles/${id}/', formData);
                 setCurrentUser((currentUser) => ({
                     ...currentUser,
                     profiles_image: data.image,

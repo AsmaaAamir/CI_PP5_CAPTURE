@@ -5,14 +5,16 @@ import { useHistory, useParams } from "react-router"
 import { axiosReq } from "../../api/axiosDefaults";
 import styles from "../../styles/AddEditPostForm.module.css";
 
-function EditPostForm(){
-    const [ errors, setErrors ] = useState({});
+function EditPostForm() {
+    const [errors, setErrors] = useState({});
     const [postData, setPostData ] = useState({
         title: "",
         content: "",
         image: "", 
     });
+
     const { title, content, image } = postData;
+    
     const imageInput = useRef(null); 
     const history = useHistory();
     const { id } = useParams();
@@ -26,7 +28,7 @@ function EditPostForm(){
 
                 is_owner ? setPostData({ title, content, image }) : history.push("/");
             } catch (err) {
-                //consol.log
+                //consol.log(err);
             }
         }; handleMount();
     }, [history, id]);
@@ -35,7 +37,7 @@ function EditPostForm(){
     const handleChange = (e) =>{
         setPostData({
             ...postData,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
         });
     };
 
@@ -60,7 +62,7 @@ function EditPostForm(){
             formData.append("image",imageInput.current.files[0]);
         }
         try {
-            await axiosReq.put('/posts/$%{id}/', formData);
+            await axiosReq.put('/posts/${id}/', formData);
             history.push('/posts/${id}');
         } catch (err) {
             //consol.log (err);
@@ -117,7 +119,7 @@ function EditPostForm(){
         <Form onSubmit={handleSubmit}>
             <Row>
                 <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-                    <Container className={'${styles.content} d-flex flex-column justify-content-center'}>
+                    <Container className={'${styles.Content} d-flex flex-column justify-content-center'}>
                         <Form.Group className="text-center">
                             <figure>
                                 <Image className={styles.Image} src={image} rounded />

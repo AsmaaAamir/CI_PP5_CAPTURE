@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 import { Form, InputGroup } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -9,7 +9,7 @@ import styles from "../../styles/AddEditComment.module.css";
 function AddCommentForm(props){
 
     const { post, setPost, setComments, 
-            ProfileImage, profile_id } = props;
+            profileImage, profile_id } = props;
     const [content, setContent] = useState("");
 
     const handleChange = (e) => {

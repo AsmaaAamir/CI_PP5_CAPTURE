@@ -16,7 +16,7 @@ export const fetchMoreData = async (resource, setResource) => {
 
 export const followHelper = (profile, clickedProfile, following_id) => {
     return profile.id === clickedProfile.id ? {
-        ...profile, follower_count: profile.followers_counts + 1,
+        ...profile, followers_count: profile.followers_counts + 1,
         following_id,
     } 
     :profile.is_owner ? {

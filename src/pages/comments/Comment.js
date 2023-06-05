@@ -38,9 +38,9 @@ const Comment = (props) => {
     };
     return (
         <> 
-        <hr/>
+        <hr />
         <Media>
-            <Link tp={'/profile/${profile_id}'}>
+            <Link to={'/profile/${profile_id}'}>
                 <Avatar src={profile_image}/>
             </Link>
             <Media.Body className="align-self-center ml-2">

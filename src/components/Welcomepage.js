@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from '../assets/new_logo.png';
-import { Card, Container } from "react-bootstrap";
 import styles from '../styles/WelcomePage.module.css';
 
 /* Welcome page wih option ot sign in and sign up */

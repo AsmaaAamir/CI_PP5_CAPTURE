@@ -10,7 +10,7 @@ export const useProfileData = () => useContext(ProfileDataContext);
 export const useSetProfileData = () => useContext(SetProfileDataContext);
 
 export const ProfileDataProvider = ({ children }) => {
-    const [profileData, setProfileData] = useState ({
+    const [profileData, setProfileData] = useState({
         pageProfile: { results: [] },
         popularProfiles: { result: [] },
     });
@@ -25,13 +25,13 @@ export const ProfileDataProvider = ({ children }) => {
 
             setProfileData((prevState) => ({
                 ...prevState, pageProfile: {
-                    result: prevState.pageProfile.results.map((profile) =>
+                    results: prevState.pageProfile.results.map((profile) =>
                     followHelper(profile, clickedProfile, data.id)
                     ),
                 },
             }));
         } catch (err) {
-            console.log(err);
+            //console.log(err);
         }
     };
 
@@ -47,14 +47,14 @@ export const ProfileDataProvider = ({ children }) => {
                     ),
                 },
                 popualrProfiles: {
-                    ...prevState.popualrProfiles,
-                    results: prevState.popualrProfiles.result.map((profile) => 
+                    ...prevState.popularProfiles,
+                    results: prevState.popularProfiles.result.map((profile) => 
                     unfollowHelper(profile, clickedProfile)
                     ),
                 },
             }));
         } catch (err) {
-            console.log(err);
+            //console.log(err);
         }     
     };
 
@@ -76,7 +76,7 @@ export const ProfileDataProvider = ({ children }) => {
         
     return(
         <ProfileDataContext.Provider value={profileData}>
-            <SetProfileDataContext.Provider value={{ setProfileData, handleFollow, handleUnfollow }}>
+            <SetProfileDataContext.Provider value={{ setProfileData, handleFollow,handleUnfollow }}>
                 { children }
             </SetProfileDataContext.Provider>
         </ProfileDataContext.Provider>

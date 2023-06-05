@@ -33,7 +33,7 @@ const NavBar = () => {
     
     const loggedInIcons = (
         <>
-        <NavLink  to="/feed/" className={styles.Icon}>
+        <NavLink  to="/feed" className={styles.Icon}>
                 <i class="fas fa-stream"></i>
                 <span>Feed </span>
         </NavLink>

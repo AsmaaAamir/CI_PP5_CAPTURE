@@ -4,22 +4,22 @@ import Asset from "../../components/Asset";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 import Profile from "./Profile";
 
-const PopualrProfiles = ({ mobile }) => {
-    const { popualrProfiles } = useProfileData();
+const PopularProfiles = ({ mobile }) => {
+    const { popularProfiles } = useProfileData();
 
     return (
         <Container className={'${styles.Content} ${ mobile && "d-lg-none text-center mb-3"}'}> 
-            {popualrProfiles.results.lenth ? (
+            {popularProfiles.results.lenth ? (
                 <>
                     <p>Most followed profiles.</p>
                         { mobile ? ( 
                             <div className="d-flex justif-content-around">
-                                {popualrProfiles.results.slice(0,4).map((profile) => (
+                                {popularProfiles.results.slice(0,4).map((profile) => (
                                 <Profile key={profile.id} profile={profile} mobile />
                             ))}
                             </div>
                         ) : (
-                            popualrProfiles.results.map((profile) => (
+                            popularProfiles.results.map((profile) => (
                                 <Profile key={profile.id} profile={profile}/>
                             ))
                              )}
@@ -31,4 +31,4 @@ const PopualrProfiles = ({ mobile }) => {
     );
 };
 
-export default PopualrProfiles;
+export default PopularProfiles;

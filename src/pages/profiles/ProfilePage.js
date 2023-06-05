@@ -16,7 +16,7 @@ import styles from "../../styles/ProfilePage.module.css";
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
-    const [profilePosts, setProfilePosts] = useState ({ result : []});
+    const [profilePosts, setProfilePosts] = useState ({ results : []});
     const useCurrentUser = useCurrentUser();
     const { id } = useParams();
     const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
@@ -28,7 +28,7 @@ function ProfilePage() {
      profiles and posts update profiles page data */
 
     useEffect(() => {
-        const fetchData =async () =>{
+        const fetchData = async () =>{
             try {
                 const [{ data: pageProfile}, { data: profilePosts}] = 
                 await Promise.all([
@@ -48,7 +48,7 @@ function ProfilePage() {
     }, [id, setProfileData]);
     
     /*  User Profile Information Display */
-    const MainProfile = (
+    const mainProfile = (
         <>
             {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
             <Row noGutter className="px-3 text-center">
@@ -75,13 +75,13 @@ function ProfilePage() {
                 <Col lg={3} className="text-lg-right">
                     {currentUser && !is_owner && (
                         profile?.following_id ? (
-                            <Button className={'${styles.Button ${styles.BlackOutLine}'}
+                            <Button className={'${styles.Button} ${styles.BlackOutLine}'}
                                 onClick={()=> handleUnfollow(Profile)} >
                                     Unfollow 
                             </Button>
                         ) : (
-                            <Button className={'${styles.Button ${styles.BlackOutLine}'}
-                            onClick={()=> handleFollow(Profile)} >
+                            <Button className={'${styles.Button} ${styles.BlackOutLine}'}
+                            onClick={()=> handleFollow(profile)} >
                                 Follow 
                         </Button>
                         ))}
@@ -93,41 +93,40 @@ function ProfilePage() {
     
     /* displaying users posts from the user */
     
-    const MainProfilePosts = (
+    const mainProfilePosts = (
         <>
             <hr/> 
             <p className="text-center">{profile?.owner}'s posts </p>
             <hr/>
             {profilePosts.results.length ? (
-                <InfiniteScroll children={profilePosts.result.map((post) => (
+                <InfiniteScroll children={profilePosts.results.map((post) => (
                     <Post key={post.id} {...post} setPosts={setProfilePosts} />
                 ))}
-                dataLenth={profilePosts.result.length}
+                dataLength={profilePosts.results.length}
                 loader={<Asset spinner />}
                 hasMore={!!profilePosts.next}
-                mnext={() => fetchMoreData(profilePosts, setProfilePosts)}
+                next={() => fetchMoreData(profilePosts, setProfilePosts)}
                 />
-                ) : (
-                    <Asset src={NoResult}
-                    message={'No result were found, ${profile?.owner} hasnt posted yet.'} />
-                )
-            }
+            ) : (
+                <Asset src={NoResult}
+                message={'No result were found, ${profile?.owner} has not posted yet.'} />
+            )}
         </>
     );
     return (
         <Row>
             <Col className="py-2 p-2 p-lg-2" lg={8}>
-                <PopualrProfiles mobile />
+                <PopularProfiles mobile />
                 <Container className={styles.Content}>
                     {hasLoaded ? ( 
-                        <> {MainProfile} {MainProfilePosts} </>
+                        <> {mainProfile} {mainProfilePosts} </>
                     ): ( 
                         <Asset spinner />
                     )}
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-blokc p-0 p-lg-2">
-                <PopualrProfiles />
+                <PopularProfiles />
             </Col>
         </Row>
     );

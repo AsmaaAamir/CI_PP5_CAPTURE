@@ -12,7 +12,7 @@ import { fetchMoreData } from "../../utils/utils";
 import styles from "../../styles/AllPosts.module.css";
 
 function AllPost({ message, filter = ""}) {
-    const [posts, setPosts] = useState({ result: [] });
+    const [posts, setPosts] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] =  useState(false);
     const { pathname } = useLocation();
 
@@ -25,7 +25,7 @@ function AllPost({ message, filter = ""}) {
                 setPosts(data);
                 setHasLoaded(true);
             } catch (err) {
-                console.log(err);
+                //console.log(err);
             }
         };
 
@@ -41,9 +41,9 @@ function AllPost({ message, filter = ""}) {
     return (
         <Row className="h-100">
             <Col className="py-2 p-2 p-lg-2" lg={8}>
-                <p>Popular Profiles mobile</p>
+                <PopularProfiles mobile/>
                 <i className={'fas fa-serach ${styles.SearchIcon}'}/>
-                <Form className={styles.SearchBar} onSubmit={(e) =>e.preventDefault()}>
+                <Form className={styles.SearchBar} onSubmit={(e) => e.preventDefault()}>
                     <Form.Control 
                         type="text"
                         className="mr-sm-2"
@@ -53,11 +53,11 @@ function AllPost({ message, filter = ""}) {
                 </Form>
                 {hasLoaded ? (
                     <>
-                        {posts.result.length ? (
-                            <InfiniteScroll children ={posts.result.map((post) => (
+                        {posts.results.length ? (
+                            <InfiniteScroll children={posts.results.map((post) => (
                                 <post key={post.id} {...post} setPosts={setPosts} />
                             ))}
-                            dataLength={posts.result.length}
+                            dataLength={posts.results.length}
                             loader={<Asset Spinner />}
                             hasMore={!!posts.next}
                             next={() => fetchMoreData(posts, setPosts)}/>

@@ -34,11 +34,11 @@ export const CurrentUserProvider = ({ children }) => {
         axiosReq.interceptors.request.use(
             async (config) => {
                 try {
-                    await axios.post('dj-rest-suth-/token/refresh/');
+                    await axios.post("dj-rest-suth-/token/refresh/");
                 } catch (err) {
                     setCurrentUser((prevCurrentUser) => {
                         if (prevCurrentUser) {
-                            history.push('/signin');
+                            history.push("/signin");
                         } return null;
                     }); return config;
                 } return config;
@@ -53,18 +53,18 @@ export const CurrentUserProvider = ({ children }) => {
             async (err) => {
                 if (err.response?.status === 401){
                     try{
-                        await axios.post('dj-rest-auth-token-refresh/')
+                        await axios.post("dj-rest-auth-token-refresh/")
                     } catch (err) {
                         setCurrentUser(prevCurrentUser => {
                             if (prevCurrentUser){
-                                history.push('/signin')
-                            } return null
-                        })
-                    }return axios(err.config)
+                                history.push("/signin");
+                            } return null;
+                        });
+                    }return axios(err.config);
                 }return Promise.reject(err);
             }
-        )
-    }, [history])
+        );
+    }, [history]);
 
     return (
         <CurrentUserContext.Provider value={currentUser}>

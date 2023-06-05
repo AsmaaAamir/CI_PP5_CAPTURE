@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Container, Overlay, OverlayTrigger, Tooltip, Media } from 'react-bootstrap';
+import { Card, OverlayTrigger, Tooltip, Media } from 'react-bootstrap';
 import { axiosRes } from '../../api/axiosDefaults';
 import Avatar from '../../components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
@@ -48,10 +48,10 @@ const Post = (props) => {
 
         const handleLike = async () => { 
             try {
-                const { data } = await axiosRes.post("/likes/", { post: id});
+                const { data } = await axiosRes.post("/likes/", { post: id });
                 setPosts((prevPosts) => ({
                     ...prevPosts, 
-                    result: prevPosts. result.map((post) => {
+                    results: prevPosts.results.map((post) => {
                         return post.id === id ? {
                             ...post, 
                             likes_count: post.likes_count + 1, 
@@ -60,7 +60,7 @@ const Post = (props) => {
                     }),
                 }));
             } catch (err) {
-                console.log(err)
+                //console.log(err)
             }
         };
 
@@ -72,7 +72,7 @@ const Post = (props) => {
                 await axiosRes.delete('/likes/${like_id}/');
                 setPosts((prevPosts) => ({
                     ...prevPosts,
-                    result: prevPosts.result.map((post) =>{
+                    results: prevPosts.results.map((post) =>{
                         return post.id === id ? {
                             ...post, likes_count: post.likes_count - 1, 
                             like_id: null}
@@ -80,7 +80,7 @@ const Post = (props) => {
                     }),
                 }));
         } catch (err) {
-            console.log(err);
+            //console.log(err);
         }
     };
 
@@ -88,18 +88,18 @@ const Post = (props) => {
         <Card className={styles.Post}>
             <Card.Body>
                 <Media className="align-item-center justify-content-between">
-                    <Link to={'/profiles/%{profile_id}'}>
+                    <Link to={'/profiles/${profile_id}'}>
                         <Avatar src={profile_image} height={55} />
                             {owner}
                     </Link>
                     <div className="d-fex align-item-center">
                         <span> {update_at}</span>
-                        {is_owner && postPage && "..."}
-                        <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete}/>
+                        {is_owner && postPage && (
+                        <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete}/>)}
                     </div>
                 </Media>
             </Card.Body>
-            <Link tp={'/posts/${id}'}>
+            <Link to={'/posts/${id}'}>
                 <Card.Img src={image} alt={title}/>
             </Link>
             <Card.Body>
