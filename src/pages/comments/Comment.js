@@ -6,6 +6,7 @@ import EditCommentForm from "./EditCommentForm";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
+import styles from "../../styles/Comment.module.css";
 
 
 const Comment = (props) => {

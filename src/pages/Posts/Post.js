@@ -3,7 +3,7 @@ import { Card, Container, Overlay, OverlayTrigger, Tooltip, Media } from 'react-
 import { axiosRes } from '../../api/axiosDefaults';
 import Avatar from '../../components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import styles from '../../styles/AllPosts.module.css';
+import styles from '../../styles/Post.module.css';
 import { Link, useHistory } from "react-router-dom";
 
 const Post = (props) => {
@@ -124,7 +124,7 @@ const Post = (props) => {
                             </span>
                         ) : (
                             <OverlayTrigger placement="top"
-                                overlay={<Tooltip>Please log into like the Post!</Tooltip>}>
+                                overlay={<Tooltip>Please log in to like the Post!</Tooltip>}>
                                     <i className="far fa-heart" />
                             </OverlayTrigger>
                         )}

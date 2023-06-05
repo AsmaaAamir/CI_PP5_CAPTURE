@@ -3,6 +3,7 @@ import  { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
+import styles from "../../styles/Profile.module.css";
 
 const Profile = (props) => { 
     const { profile, mobile, imageSize = 55} = props;
@@ -12,7 +13,7 @@ const Profile = (props) => {
     const { handleFollow, handleUnfollow } = useSetProfileData();
 
     return(
-        <div calssName={'my-3 d-flex align-item-center ${modile && "flex=column"}'}>
+        <div calssName={'my-3 d-flex align-item-center ${mobile && "flex=column"}'}>
             <div>
                 <Link to={'/profile/${id}'}className="align-self-center">
                     <Avatar src={image} height={imageSize}/>

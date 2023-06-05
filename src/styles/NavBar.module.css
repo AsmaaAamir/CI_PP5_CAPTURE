@@ -1,15 +1,8 @@
-/*.NavBar{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1;
+.NavBar{
+    background-color: rgb(162, 158, 158);
+    border: 2px solid #c8c8cc;
 }
 
-.NavLogo{
-    margin: 15px;
-}
-*/
 .NavIcon{
     display: flex;
     flex-direction: column;

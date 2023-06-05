@@ -4,13 +4,14 @@ import { useParams } from "react-router";
 import { InfiniteScroll } from "react-InfiniteScroll-components"
 
 import Asset from "../../components.Asset";
-import PopularProfiles from "./PopualrProfiles";
+import PopularProfiles from "./PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useProfileData, useSetProfileData, } from "../../contexts/ProfileDataContext";
 import Post from "../../posts/post";
 import { fetchMoreData } from "../../utils/utils";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import styles from "../../styles/ProfilePage.module.css";
 
 
 function ProfilePage() {
@@ -52,7 +53,7 @@ function ProfilePage() {
             {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
             <Row noGutter className="px-3 text-center">
                 <Col lg={3} className="text-lg-left">
-                    <Image className={stlyes.Profile.Image} roundedCircle src={profile?.image} />
+                    <Image className={styles.ProfileImage} roundedCircle src={profile?.image} />
                 </Col>
                 <Col lg={6}>
                     <h3 className="m-2">{profile?.owner}</h3>

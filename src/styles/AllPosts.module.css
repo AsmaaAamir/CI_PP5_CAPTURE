@@ -1,13 +1,18 @@
-.AllPosts{
-    display: flex;
-    flex-direction: row;
+.SearchBar input{
+    border-radius: 5px;
+    color: #505565;
+    padding-left: 40px;
+    margin-bottom: 16px;
 }
 
-.Navbarside{
-    position: relative;
-    flex:0.2;
+.SearchIcon {
+    position: absolute;
+    font-size: 20px;
+    padding: 9px;
+    padding-left: 20px;
 }
 
-.Content{
-    flex:0.8;
+.SearchIcon:hover {
+    cursor: pointer;
+    color: whitesmoke;
 }

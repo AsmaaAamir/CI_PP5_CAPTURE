@@ -9,6 +9,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 
+import styles from "../../styles/AllPosts.module.css";
+
 function AllPost({ message, filter = ""}) {
     const [posts, setPosts] = useState({ result: [] });
     const [hasLoaded, setHasLoaded] =  useState(false);
@@ -27,7 +29,7 @@ function AllPost({ message, filter = ""}) {
             }
         };
 
-        setHasLaoded(false);
+        setHasLoaded(false);
         const timer = setTimeout(() => {
             fetchPosts();
         }, 1000);
@@ -51,14 +53,14 @@ function AllPost({ message, filter = ""}) {
                 </Form>
                 {hasLoaded ? (
                     <>
-                        {posts.reault.lenth ? (
-                            <InfiniteScroll children ={posts.reasult.map((post) => (
+                        {posts.result.length ? (
+                            <InfiniteScroll children ={posts.result.map((post) => (
                                 <post key={post.id} {...post} setPosts={setPosts} />
                             ))}
-                            dataLength={posts.result.lenth}
+                            dataLength={posts.result.length}
                             loader={<Asset Spinner />}
                             hasMore={!!posts.next}
-                            next={() => fecthMoreData(posts, setPosts)}/>
+                            next={() => fetchMoreData(posts, setPosts)}/>
 
                         ) : (
                             <Container className={styles.Content}>

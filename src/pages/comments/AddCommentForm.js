@@ -3,6 +3,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { Form, InputGroup } from "react-bootstrap";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import styles from "../../styles/AddEditComment.module.css";
 
 
 function AddCommentForm(props){
@@ -42,10 +43,10 @@ function AddCommentForm(props){
             <Form.Group>
                 <InputGroup>
                     <Link tp={'/profile/${profile_id}'}>
-                        <Avartar src={profileImage}/>
+                        <Avatar src={ProfileImage}/>
                     </Link>
                     <Form.Control
-                        className={style.Form}
+                        className={styles.Form}
                         as="textarea"
                         row={2}
                         placeholder="Please type your comment..."
