@@ -17,12 +17,12 @@ export const MoreDropdown = ({ handleEdit, handleDelet }) => {
         <Dropdown className="ml-auto" drop="left">
             <Dropdown.Toggle as={MoreOptions}/>
             <Dropdown.Menu className="text-center" popperConfid={{ strategy: "fixed" }}>
-                <Drop.Item className={styles.Dropdown} onClick={handleEdit} aria-label="Edit">
+                <Dropdown.Item className={styles.Dropdown} onClick={handleEdit} aria-label="Edit">
                     <i className="fas- fa-edit" />
-                </Drop.Item>
-                <Drop.Item className={style.Dropdown} onClick={handleDelet} aria-label="Delet">
+                </Dropdown.Item>
+                <Dropdown.Item className={styles.Dropdown} onClick={handleDelet} aria-label="Delet">
                     <i className="fas- fa-trash-alt" />
-                </Drop.Item>
+                </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     );

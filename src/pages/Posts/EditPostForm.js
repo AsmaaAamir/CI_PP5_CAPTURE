@@ -3,6 +3,7 @@ import { Form, Button, Row, Col, Container, Alert, Image } from "react-bootstrap
 import { useHistory, useParams } from "react-router"
 
 import { axiosReq } from "../../api/axiosDefaults";
+import styles from "../../styles/AddEditPostForm.module.css";
 
 function EditPostForm(){
     const [ errors, setErrors ] = useState({});
@@ -113,7 +114,7 @@ function EditPostForm(){
     );
 
     return (
-        <Form onSubmit={handeSubmit}>
+        <Form onSubmit={handleSubmit}>
             <Row>
                 <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
                     <Container className={'${styles.content} d-flex flex-column justify-content-center'}>

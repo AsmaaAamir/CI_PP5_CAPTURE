@@ -6,15 +6,15 @@ export const fetchMoreData = async (resource, setResource) => {
         setResource((prevResource) => ({
             ...prevResource, 
             next: data.next,
-            result: data.results.redcue((ass, cur) => {
+            results: data.results.reduce((acc, cur) => {
                 return acc.some((accResult) => accResult.id === cur.id)
                 ? acc : [...acc, cur];
-            }, prevResource.result),
+            }, prevResource.results),
         }));
     } catch (err) {}
 };
 
-export const followHelper = (profile, clickedProfile, follwing_id) => {
+export const followHelper = (profile, clickedProfile, following_id) => {
     return profile.id === clickedProfile.id ? {
         ...profile, follower_count: profile.followers_counts + 1,
         following_id,
@@ -26,8 +26,8 @@ export const followHelper = (profile, clickedProfile, follwing_id) => {
 
 export const unfollowHelper = (profile, clickedProfile) => {
     return profile.id === clickedProfile.id ? {
-        ...profile. folloers_count: pofile.followers_count - 1,
-        following_id: null
+        ...profile, followers_count: profile.followers_count - 1,
+        following_id: null,
     }
     : profile.is_owner ? { 
         ...profile, following_count: profile.following_count - 1 

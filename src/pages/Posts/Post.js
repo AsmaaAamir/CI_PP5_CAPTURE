@@ -5,6 +5,9 @@ import Avatar from '../../components/Avatar';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from '../../styles/Post.module.css';
 import { Link, useHistory } from "react-router-dom";
+import { MoreDropdown } from "../../components/MoreDropDown";
+
+
 
 const Post = (props) => {
 
