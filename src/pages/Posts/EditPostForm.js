@@ -134,7 +134,7 @@ function EditPostForm(){
                                 ref={imageInput}
                                 />
                         </Form.Group>
-                        {errors?.image?.map((messgae, idx) => {
+                        {errors?.image?.map((message, idx) => {
                             <Alert variant="warning" key={idx}>
                                 {message}
                             </Alert>
@@ -152,5 +152,4 @@ function EditPostForm(){
     );
 
 }
-
 export default EditPostForm;
