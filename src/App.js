@@ -17,31 +17,37 @@ import EditPostForm from "./pages/Posts/EditPostForm";
 
 function App() {
     const currentUser = useCurrentUser();
-    const profile_id = currentUser?.profile_id || "";
+    const profile_id = currentUser?.profile_id || ""; 
     
     return (
     <div className={styles.App}>
         <NavBar/>
         <Container className={styles.Body}> 
+            {!currentUser ? (
                 <Switch>
                     <Route exact path="/" render={ () => <Welcomepage/> }/> 
                     <Route exact path="/signin" render={ () => <SignInForm /> }/>
                     <Route exact path="/signup" render={ () => <SignUpForm /> }/>
+                    <Route render={()=> <Welcomepage />} />
                 </Switch>
+            ) : ( 
+                <Switch>
+                    <Route exact path="/" render={() => ( <PostsPage message="No results Found. Please try again"/>)}/>
+                    <Route exact path="/feed" render={() => ( <PostsPage message="No results Found. Please try again" filter={'owner_followed_owner_profiles=${profile_id}&'}/>
+                    )}/>
+                    <Route exact path="/liked" render={() => ( <PostsPage message="No results Found. Please try again" filter={'likes_owner_profiles=${profile_id}&ordering=-likes_created_at&'}/>
+                    )}/>
+                     <Route exact path="/feed" render={ () => <AllPosts/> }/>
+                    <Route exact path="/profile" render={ () => <h1>Profile</h1> }/>
+                    <Route exact path="/posts/addpost" render={ () => <AddPostForm/> }/>
+                    <Route exact path="/posts/:id" render={ () => <PostPage/> }/>
+                    <Route exact path="/posts/:id/edit" render={ () => <EditPostForm/> }/>
+                    <Route exact path="/signin" render={ () => <SignInForm /> }/>
+                    <Route exact path="/signup" render={ () => <SignUpForm /> }/>
+                    <Route render={() => <p>Page Not Found! </p>}/>
 
-        </Container> 
-        <NavBar/>
-        <Container className={styles.Main}>
-            <Switch>
-                <Route exact path="/feed" render={ () => <AllPosts/> }/>
-                <Route exact path="/profile" render={ () => <h1>Profile</h1> }/>
-                <Route exact path="/posts/addpost" render={ () => <AddPostForm/> }/>
-                <Route exact path="/posts/:id" render={ () => <PostPage/> }/>
-                <Route exact path="/posts/:id/edit" render={ () => <EditPostForm/> }/>
-                <Route exact path="/signin" render={ () => <SignInForm /> }/>
-                <Route exact path="/signup" render={ () => <SignUpForm /> }/>
-                <Route render={() => <p>Page Not Found! </p>}/>
-            </Switch>
+                </Switch>
+            )}
         </Container>
     </div>
   );
