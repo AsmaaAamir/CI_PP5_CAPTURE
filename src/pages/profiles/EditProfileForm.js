@@ -2,9 +2,9 @@ import React, {useEffect, useState, useRef} from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { Form, Row, Col, Container, Image, Button, Alert } from "react-bootstrap";
 
-import axiosReq from "../../api/axiosDefaults";
+import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
-
+import styles from "../../styles/Button.module.css";
 
 const EditProfileForm = () => {
     const currentUser = useCurrentUser();
@@ -139,7 +139,7 @@ const EditProfileForm = () => {
                         </Container>
                     </Col>
                     <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text center">
-                        <Continer className={styles.Content}>{textFiels}</Continer>
+                        <Container className={styles.Content}>{textFields}</Container>
                     </Col>
                 </Row>
             </Form>

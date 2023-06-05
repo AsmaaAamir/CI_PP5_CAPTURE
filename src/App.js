@@ -1,4 +1,3 @@
-import logo from "../src/assets/new_logo.png";
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from 'react-bootstrap/Container';
@@ -14,6 +13,7 @@ import AddPostForm from "../src/pages/Posts/AddPostForm";
 import PostPage from "./pages/Posts/PostPage";
 import EditPostForm from "./pages/Posts/EditPostForm";
 import Profile from "../src/pages/profiles/Profile";
+import EditProfileForm from "../src/pages/profiles/EditProfileForm";
 
 
 function App() {
@@ -43,7 +43,9 @@ function App() {
                     <Route exact path="/posts/addpost" render={ () => <AddPostForm/> }/>
                     <Route exact path="/posts/:id" render={ () => <PostPage/> }/>
                     <Route exact path="/posts/:id/edit" render={ () => <EditPostForm/> }/>
+                    <Route exact path="/profiles/:id/edit" render={ () => <EditProfileForm.js/>} />
                     <Route render={() => <p>Page Not Found! </p>}/>
+            
 
                 </Switch>
             )}
