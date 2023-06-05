@@ -9,7 +9,7 @@ import AddCommentForm from "../comments/AddCommentForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
-import { fetchMoreData } from "../../components/MoreDropDown";
+import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostPage() {
@@ -26,7 +26,7 @@ function PostPage() {
             try {
                 const [{ data: post }, { data: comments}] = await Promise.all ([
                     axiosReq.get('/posts/${id}'),
-                    axiosRed.get('/comments/?post=${id}'),
+                    axiosReq.get('/comments/?post=${id}'),
                 ]);
                 setPost({ result: [post ]});
                 setComments(comments);
@@ -42,9 +42,9 @@ function PostPage() {
         <Col className="py-2 p-0 p-lg" lg={8}>
             <p> Popular profile for mobile</p>
             <Post {...post.results[0]} setPosts={setPost} postPage/>
-            <Container className={appStyles.Content}>
+            <Container className={Styles.Content}>
             {currentUser ? (
-                <CommentCreateForm
+                <AddCommentForm
                 profile_id={currentUser.profile_id}
                 profileImage={profile_image}
                 post={id}

@@ -43,7 +43,7 @@ function AddCommentForm(props){
             <Form.Group>
                 <InputGroup>
                     <Link tp={'/profile/${profile_id}'}>
-                        <Avatar src={ProfileImage}/>
+                        <Avatar src={profileImage}/>
                     </Link>
                     <Form.Control
                         className={styles.Form}

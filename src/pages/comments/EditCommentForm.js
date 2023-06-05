@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Form from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import styles from "../../styles/AddEditComment.module.css";
 import { axiosRes } from "../../api/axiosDefaults"; 
 

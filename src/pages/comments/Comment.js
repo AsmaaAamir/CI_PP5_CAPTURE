@@ -3,7 +3,7 @@ import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import EditCommentForm from "./EditCommentForm";
-
+import { MoreDropdown } from "../../components/MoreDropDown";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/Comment.module.css";
@@ -23,7 +23,7 @@ const Comment = (props) => {
         try {
             await axiosRes.delete('/comments/${id}/');
             setPost((prevPost) => ({
-                result: [ {
+                results: [ {
                     ...prevPost.result[0],
                     comments_count: prevPost.result[0].comments_count - 1,
                 },
@@ -32,7 +32,7 @@ const Comment = (props) => {
 
         setComments ((prevComments) => ({
             ...prevComments,
-            result: prevComments.result.filter((comment) => comment.id !== id),
+            results: prevComments.result.filter((comment) => comment.id !== id),
             }));
         } catch (err) {}
     };
