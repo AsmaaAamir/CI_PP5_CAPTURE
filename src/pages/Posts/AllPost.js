@@ -64,7 +64,7 @@ function AllPost({ message, filter = ""}) {
 
                         ) : (
                             <Container className={styles.Content}>
-                                <Asset src={NoResults} message={message}/>
+                                <Asset src={""} message={message}/>
                             </Container>
                         )}
                     </>

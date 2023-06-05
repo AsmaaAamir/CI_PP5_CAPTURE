@@ -4,9 +4,11 @@ import axios from "axios";
 import styles from "../../styles/SignInUp.module.css";
 import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function SignInForm() {
     const setCurrentUser = useSetCurrentUser();
+    useRedirect("loggedIn")
 
 
     const [signInData, setSignInData ] = useState ({
@@ -97,6 +99,6 @@ function SignInForm() {
         </Row>
         </Container>
     );
-};
+}
 
 export default SignInForm;

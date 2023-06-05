@@ -23,12 +23,13 @@ const Comment = (props) => {
         try {
             await axiosRes.delete('/comments/${id}/');
             setPost((prevPost) => ({
-                results: [ {
-                    ...prevPost.result[0],
-                    comments_count: prevPost.result[0].comments_count - 1,
+                results: [ 
+                    { 
+                    ...prevPost.results[0],
+                    comments_count: prevPost.results[0].comments_count - 1,
                 },
             ],
-        })),
+        }));
 
         setComments ((prevComments) => ({
             ...prevComments,
