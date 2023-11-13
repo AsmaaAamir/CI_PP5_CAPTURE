@@ -63,16 +63,34 @@ I kept the images that would be shared on this website in mind when I designed t
 <hr>
 
 ### Languages 
+- HTML
+- CSS
+- Javascript 
+    - React
 
 ### Libraries, frameworks and dependencie
 
 ### Tools & Programs
+- Balsamiq (https://balsamiq.com/) - Used to create the wireframe for the project
+- Cloudinary (https://cloudinary.com/) - Used to store store static files  
+- Coolors (https://coolors.co/) - Used to design the project's colour palette 
+- Favicon.io (https://favicon.io/favicon-converter/) - Used to create the website favicon.
+- Font Awesome (https://fontawesome.com/) - Used to get all the Icon used on this website
+- Google Font (https://fonts.google.com/) - Used to get the font style
+- Github (https://github.com/) - Used to create a repository where the project's files are stored
+- CodeAnyWhere (https://codeanywhere.com/solutions/collaborate) - Used for the development for thsi project.
+- Am I Responsive (https://ui.dev/amiresponsive ) - Used to create a sample to show how it would look on different device. 
+- WC3 Valdator (https://validator.w3.org/) - Used to Validate the HTML code
+- Jigsaw W3 Validator (https://jigsaw.w3.org/css-validator/) - Used to Validate the CSS code
+- Lighthouse (https://developer.chrome.com/docs/lighthouse/overview/) - Used to check perfomance, accessibilty and best practice. 
+- Wave (https://wave.webaim.org/extension/) - Used to check website accessibilty
 
-## Front End
+## Front-End
 <hr>
 
-## Back End
+## Back-End
 <hr>
+I created the front-end API for this project using the Django REST Framework. You can find the DRF Back-End repository [here](https://github.com/AsmaaAamir/Capture_API_DRF). 
 
 ## Validation
 <hr>
