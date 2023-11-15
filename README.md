@@ -32,6 +32,7 @@
 <hr>
 Capture is a platform where user's can share photo's of their adventures, inspiring other people to travel or add the location to their vacation list.
 This platform allows users to keep up with other users posts, like other user posts, comment on, and follow them. To upload posts, like, comments, and follow other users, user must be signed in. 
+Capture is a platform where user's can share photo's of their adventures, inspiring other people to travel or add the location to their vacation list. To upload posts, like comments, and follow other users, user must be signed in. To keep up with other users posts, the app lets users like, comment on, and follow them. 
 
 ## Project Goals 
 <hr>

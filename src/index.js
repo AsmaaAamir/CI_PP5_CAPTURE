@@ -12,7 +12,7 @@ ReactDOM.render(
     <Router>
         <CurrentUserProvider>
             <ProfileDataProvider>
-                <App />
+                <App/>
             </ProfileDataProvider>
         </CurrentUserProvider>
     </Router>

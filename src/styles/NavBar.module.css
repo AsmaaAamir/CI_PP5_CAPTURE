@@ -1,37 +1,5 @@
 .NavBar{
-    background-color: rgb(162, 158, 158);
-    border: 2px solid #c8c8cc;
-}
-
-.NavIcon{
-    display: flex;
-    flex-direction: column;
-}
-
-.Icon{
-    text-decoration: none;
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    color: black;
-    background: 0;
-    border: 0;
-    margin:5px 10px 5px 10px;
-    padding: 10px 15px 10px 15px;
-    border-radius: 15px;
-    width: 100%;
-}
-
-.Icon:hover{
-    cursor: pointer;
-    background-color: rgba(49, 46, 46, 0.128);
-    text-decoration: none;
-    font-size: 19px;
-    font-weight: bolder;
-    width: 50%;
+    background-color: rgb(0, 0, 0);
 }
 
 
-.Icon span {
-    padding-left: 10px;
-}

@@ -1,14 +1,19 @@
-h1{
-    font-family:'Tsukimi Rounded', sans-serif;
+* {
+    box-sizing: border-box;
 }
 
 .App{
-    height: 100vh;
+    font-family: 'Tsukimi Rounded', sans-serif;;
+    min-height: 100vh;
+    background-color: black;  
+}
 
-    display: flex;
-    flex-direction: row;
+i{
+    color: blanchedalmond;
+    padding: 8px;
+    font-size: 1.3rem;
+}
 
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+i:hover{
+    font-size: 1.6rem;
 }

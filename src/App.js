@@ -38,15 +38,13 @@ function App() {
                     )}/>
                     <Route exact path="/liked" render={() => ( <AllPost message="No results Found. Please try again" filter={'likes_owner_profiles=${profile_id}&ordering=-likes_created_at&'}/>
                     )}/>
-                     <Route exact path="/feed" render={ () => <AllPost/> }/>
+                    <Route exact path="/feed" render={ () => <AllPost/> }/>
                     <Route exact path="/profile" render={ () => <Profile /> }/>
                     <Route exact path="/posts/addpost" render={ () => <AddPostForm/> }/>
                     <Route exact path="/posts/:id" render={ () => <PostPage/> }/>
                     <Route exact path="/posts/:id/edit" render={ () => <EditPostForm/> }/>
                     <Route exact path="/profiles/:id/edit" render={ () => <EditProfileForm.js/>} />
                     <Route render={() => <p>Page Not Found! </p>}/>
-            
-
                 </Switch>
             )}
         </Container>
