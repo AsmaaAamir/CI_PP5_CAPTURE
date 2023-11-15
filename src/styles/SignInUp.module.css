@@ -24,22 +24,20 @@ span{
     align-items: center;
     display: block;
     margin: auto;
+    color:  rgb(234, 136, 17);
 
 }
 .Link:hover{
     text-decoration: none;
     cursor: pointer;
+    color: bisque;
 }
-
+.Link span:hover{
+    font-size: 1.8rem;
+}
 .Header{
     text-align: center;   
     padding: 20px;
-}
-.Button{
-    width: 100%;
-}
-.Button:hover{
-    opacity: 0.8;
-    border-color: transparent;
-    cursor: pointer;
+    color: rgb(234, 136, 17);
+    font-weight: bolder;
 }

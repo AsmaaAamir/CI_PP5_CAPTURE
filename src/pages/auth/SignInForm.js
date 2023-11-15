@@ -1,10 +1,11 @@
 import React, {useState} from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from 'react-router-dom';
 import axios from "axios";
 import styles from "../../styles/SignInUp.module.css";
-import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
+import { Form, Button, Col, Row, Container, Alert, } from "react-bootstrap";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
+import btnStyles from "../../styles/Button.module.css";
 
 function SignInForm() {
     const setCurrentUser = useSetCurrentUser();
@@ -43,7 +44,7 @@ function SignInForm() {
     return (
         <Container className={styles.Form}>
         <Row className={styles.Row}>
-            <Col className="my-auto py-2 p-md-2" md={6}>
+            <Col className="my-auto py-4 p-md-4" md={10}>
                 <Container className={'${appStyles.Content} p-4'}>
                     <h1 className={styles.Header}>Sign In</h1>
                     <Form onSubmit={handleSubmit}>
@@ -80,8 +81,8 @@ function SignInForm() {
                                 {message}
                             </Alert>
                         ))}
-                    <Button className={styles.Button}  variant="primary" type="submit">
-                        Sign In
+                    <Button className={`${btnStyles.Button} ${btnStyles.Width} ${btnStyles.Colour}`} type="submit">
+                        Log In
                     </Button>
                     {errors.non_field_errors?.map((message, idx) =>( 
                     <Alert key={idx} variant="warning" className="mt-3">
@@ -91,7 +92,7 @@ function SignInForm() {
                     </Form>
                 </Container>
                 <Container className={'mt-3 ${appStyles.Content}'}>
-                        <Link clasName={styles.Link} to="/signup">
+                        <Link className={styles.Link} to="/signup">
                             <p>Don't have an account <span>Sign In</span></p>
                       </Link>
                 </Container>

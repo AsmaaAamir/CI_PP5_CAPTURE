@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from '../styles/WelcomePage.module.css';
 import welcome from '../assets/p5-welcomepage.png';
+import btnStyles from "../styles/Button.module.css";
+import { Button } from "react-bootstrap";
 
 
 /* Welcome page wih option to sign in and sign up */
@@ -22,10 +24,10 @@ const Welcomepage = () => {
                     </div>
                     <div className={styles.WelcomeButton}>
                         <NavLink exact to="/signin" >
-                            <button className={styles.WelcomeButton1}>Sign In </button>
+                            <Button className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Colour}`} type="submit">Sign In </Button>
                         </NavLink>
                         <NavLink exact to="/signup" >
-                            <button className={styles.WelcomeButton2}>Sign Up </button>
+                            <Button className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Colour}`} type="submit">Sign Up </Button>
                         </NavLink>
                     </div>
                 </div>
