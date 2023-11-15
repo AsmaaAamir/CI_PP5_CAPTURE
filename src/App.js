@@ -1,10 +1,9 @@
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from 'react-bootstrap/Container';
-import { Route, Switch } from "react-router-dom"; 
+import { Route, Switch } from 'react-router-dom'; 
 import "./api/axiosDefaults";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
-
 import Welcomepage from "./components/Welcomepage";
 import SignInForm from "../src/pages/auth/SignInForm";
 import SignUpForm from "../src/pages/auth/SignUpForm";
@@ -44,7 +43,7 @@ function App() {
                     <Route exact path="/posts/:id" render={ () => <PostPage/> }/>
                     <Route exact path="/posts/:id/edit" render={ () => <EditPostForm/> }/>
                     <Route exact path="/profiles/:id/edit" render={ () => <EditProfileForm.js/>} />
-                    <Route render={() => <p>Page Not Found! </p>}/>
+                    <Route render={() => <p> Page Not Found! </p>} />
                 </Switch>
             )}
         </Container>

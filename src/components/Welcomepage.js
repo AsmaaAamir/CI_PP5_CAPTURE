@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styles from '../styles/WelcomePage.module.css';
 import welcome from '../assets/p5-welcomepage.png';
 
+
 /* Welcome page wih option to sign in and sign up */
 
 const Welcomepage = () => {
@@ -10,13 +11,15 @@ const Welcomepage = () => {
         <div className={styles.Container}>
            <div className="row">
                 <div class="col-md-8">
-                    <img class="img-fluid" src={welcome}/>
+                    <img class="img-fluid" src={welcome} alt="travle picture "/>
                 </div>
                 <div class="col-md-4">
-                    <h1>Welcome</h1>
-                    <p>
-                        Capture the moments and share it with your loved one and the world. Become the next inspiration for someone..!
-                    </p>
+                    <div className={styles.WelcomeText}>
+                        <h1>Welcome</h1>
+                        <p>
+                            Capture the moments and share it with your loved one and the world. Become the next inspiration for someone..!
+                        </p>
+                    </div>
                     <div className={styles.WelcomeButton}>
                         <NavLink exact to="/signin" >
                             <button className={styles.WelcomeButton1}>Sign In </button>
